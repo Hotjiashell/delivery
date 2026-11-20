@@ -1,0 +1,40 @@
+# 运行结果与检查点
+/results/
+/outputs/
+/query_rewrite/results/
+/query_rewrite/outputs/
+/extract_knowledge/results/
+/extract_knowledge/outputs/
+.writing-*
+.final_prompt-*
+*.log
+*.tmp
+
+# Python 缓存、测试产物与构建目录
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# 虚拟环境和本地配置
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+!.env.sample
+config.local.json
+
+# 编辑器和系统文件
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

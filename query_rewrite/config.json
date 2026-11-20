@@ -1,0 +1,19 @@
+{
+  "llm": {
+    "api_key_env": "OPENAI_API_KEY"
+  },
+  "query_generation": {
+    "method": "custom_multi",
+    "input_path": "data/dialog_example.json",
+    "output_path": "results/generated_queries.json",
+    "concurrency": 1,
+    "prompt_file": "prompts/konwledge_multi_query.txt"
+  },
+  "retrieval": {
+    "input_path": "results/generated_queries.json",
+    "output_path": "results/retrieval.json",
+    "url": "http://10.67.43.14:8276/run_case_retrieval",
+    "timeout": 30,
+    "concurrency": 1
+  }
+}

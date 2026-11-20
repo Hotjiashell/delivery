@@ -1,0 +1,64 @@
+{
+  "llm": {
+    "base_url": "",
+    "model_name": "",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0
+  },
+  "extract_knowledge": {
+    "badcases": [
+      "results/badcases*.json"
+    ],
+    "knowledge": "extract_knowledge/existing_knowledge.txt",
+    "cases": "query_rewrite/data/case_example.json",
+    "dialogues": null,
+    "output_dir": "extract_knowledge/outputs/run_001",
+    "concurrency": 16,
+    "timeout": 120,
+    "retries": 2,
+    "max_tokens": 4096,
+    "keyword_batch_size": 10,
+    "max_examples": 10,
+    "resume": true,
+    "prompts_file": "extract_knowledge/prompts.md",
+    "min_cluster_size": 1,
+    "precluster_similarity_threshold": 0.85
+  },
+  "embedding": {
+    "base_url": "",
+    "model_name": "",
+    "api_key_env": "EMBEDDING_API_KEY",
+    "batch_size": 32,
+    "concurrency": 4,
+    "timeout": 120,
+    "retries": 2
+  },
+  "feedback": {
+    "enabled": true,
+    "retrieval_url": "http://10.67.43.14:8276/run_case_retrieval",
+    "max_entries": 0,
+    "max_rounds": 3,
+    "top_k": 10,
+    "min_recall": 1.0,
+    "timeout": 30,
+    "concurrency": 16,
+    "prompt_file": "extract_knowledge/eval_prompt_template.txt",
+    "knowledge_file": "extract_knowledge/existing_knowledge.txt",
+    "fusion_method": "round_robin"
+  },
+  "review_llm": {
+    "base_url": "",
+    "model_name": "",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0
+  },
+  "research": {
+    "enabled": false,
+    "retrieval_url": "http://10.67.43.14:8276/run_case_retrieval",
+    "top_k": 5,
+    "max_searches": 3,
+    "min_dialogues": 5,
+    "concurrency": 4,
+    "timeout": 30
+  }
+}
