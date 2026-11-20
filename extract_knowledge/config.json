@@ -53,7 +53,7 @@
     "temperature": 0
   },
   "research": {
-    "enabled": false,
+    "enabled": true,
     "retrieval_url": "http://10.67.43.14:8276/run_case_retrieval",
     "top_k": 5,
     "max_searches": 3,
